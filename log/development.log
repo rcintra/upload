@@ -1,0 +1,906 @@
+
+
+Processing ImagesController#index (for 127.0.0.1 at 2010-01-27 22:28:15) [GET]
+Rendering images/index
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/images]
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 22:29:20) [GET]
+Rendering images/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/images/new.html.erb:
+1: <% form_for( @image, :html => { :multipart => true } ) do |f| %>
+2:   <%= f.error_messages -%>
+3:   <p>
+4:     <%= f.label :name, 'Title' %>
+
+    app/views/images/new.html.erb:1
+
+Rendered rescues/_trace (38.4ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 22:31:49) [GET]
+
+NameError (uninitialized constant ImagesController::Image):
+  app/controllers/images_controller.rb:6:in `new'
+
+Rendered rescues/_trace (63.3ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 22:32:36) [GET]
+
+ActiveRecord::StatementInvalid (Could not find table 'images'):
+  app/controllers/images_controller.rb:6:in `new'
+  app/controllers/images_controller.rb:6:in `new'
+
+Rendered rescues/_trace (67.0ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.9ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateImages (20100128003226)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100128003226')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("images")[0m
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 22:33:05) [GET]
+Rendering images/new
+
+ActionView::TemplateError (undefined method `images_path' for #<ActionView::Base:0x1119ff8>) on line #1 of app/views/images/new.html.erb:
+1: <% form_for( @image, :html => { :multipart => true } ) do |f| %>
+2:   <%= f.error_messages -%>
+3:   <p>
+4:     <%= f.label :name, 'Title' %>
+
+    app/views/images/new.html.erb:1
+
+Rendered rescues/_trace (38.8ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 22:34:09) [GET]
+Rendering images/new
+
+ActionView::TemplateError (undefined method `name' for #<Image id: nil, created_at: nil, updated_at: nil>) on line #5 of app/views/images/new.html.erb:
+2:   <%= f.error_messages -%>
+3:   <p>
+4:     <%= f.label :name, 'Title' %>
+5:     <%= f.text_field :name %>
+6:   </p>
+7:   <p>
+8:     <%= f.label :upload, 'File' -%>
+
+    app/views/images/new.html.erb:5
+    app/views/images/new.html.erb:1
+
+Rendered rescues/_trace (40.6ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 22:34:28) [GET]
+Rendering images/new
+Completed in 15ms (View: 7, DB: 0) | 200 OK [http://localhost/images/new]
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 22:36:54) [GET]
+Rendering images/new
+Completed in 64ms (View: 60, DB: 0) | 200 OK [http://localhost/images/new]
+
+
+Processing ImagesController#create (for 127.0.0.1 at 2010-01-27 22:37:05) [POST]
+  Parameters: {"commit"=>"Upload", "authenticity_token"=>"qF/m2fDch99FeuLL/Lk6CGnooCC7IGxWic5fvs2dQRM=", "image"=>{"upload"=>#<File:/var/folders/Rf/RfHTt3KLHB4FkZ9w0KlVK++++TI/-Tmp-/RackMultipart.2461.0>}}
+
+NameError (uninitialized constant ImagesController::DataFile):
+  app/controllers/images_controller.rb:10:in `create'
+
+Rendered rescues/_trace (30.0ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 22:37:23) [GET]
+Rendering images/new
+Completed in 64ms (View: 60, DB: 0) | 200 OK [http://localhost/images/new]
+
+
+Processing ImagesController#create (for 127.0.0.1 at 2010-01-27 22:37:30) [POST]
+  Parameters: {"commit"=>"Upload", "authenticity_token"=>"qF/m2fDch99FeuLL/Lk6CGnooCC7IGxWic5fvs2dQRM=", "image"=>{"upload"=>#<File:/var/folders/Rf/RfHTt3KLHB4FkZ9w0KlVK++++TI/-Tmp-/RackMultipart.2466.0>}}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  app/models/image.rb:3:in `save'
+  app/controllers/images_controller.rb:10:in `create'
+
+Rendered rescues/_trace (29.8ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 22:53:42) [GET]
+Rendering images/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/images/new.html.erb:
+1: <% form_for( @image, :html => { :multipart => true } ) do |f| %>
+2:   <%= f.error_messages -%>
+3:   <p>
+4:     <%= f.label :upload, 'File' -%>
+
+    app/views/images/new.html.erb:1
+
+Rendered rescues/_trace (37.7ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 22:54:21) [GET]
+Rendering images/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/images/new.html.erb:
+1: <% form_for( @image, :html => { :multipart => true } ) do |f| %>
+2:   <%= f.error_messages -%>
+3:   <p>
+4:     <%= f.label :upload, 'File' -%>
+
+    app/views/images/new.html.erb:1
+
+Rendered rescues/_trace (41.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 22:56:26) [GET]
+Rendering images/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/images/new.html.erb:
+1: <% form_for( @image, :html => { :multipart => true } ) do |f| %>
+2:   <%= f.error_messages -%>
+3:   <p>
+4:     
+
+    app/views/images/new.html.erb:1
+
+Rendered rescues/_trace (37.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 22:56:27) [GET]
+Rendering images/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/images/new.html.erb:
+1: <% form_for( @image, :html => { :multipart => true } ) do |f| %>
+2:   <%= f.error_messages -%>
+3:   <p>
+4:     
+
+    app/views/images/new.html.erb:1
+
+Rendered rescues/_trace (37.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 22:56:27) [GET]
+Rendering images/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/images/new.html.erb:
+1: <% form_for( @image, :html => { :multipart => true } ) do |f| %>
+2:   <%= f.error_messages -%>
+3:   <p>
+4:     
+
+    app/views/images/new.html.erb:1
+
+Rendered rescues/_trace (99.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 22:56:27) [GET]
+Rendering images/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/images/new.html.erb:
+1: <% form_for( @image, :html => { :multipart => true } ) do |f| %>
+2:   <%= f.error_messages -%>
+3:   <p>
+4:     
+
+    app/views/images/new.html.erb:1
+
+Rendered rescues/_trace (40.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 22:56:27) [GET]
+Rendering images/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/images/new.html.erb:
+1: <% form_for( @image, :html => { :multipart => true } ) do |f| %>
+2:   <%= f.error_messages -%>
+3:   <p>
+4:     
+
+    app/views/images/new.html.erb:1
+
+Rendered rescues/_trace (98.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 22:56:28) [GET]
+Rendering images/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/images/new.html.erb:
+1: <% form_for( @image, :html => { :multipart => true } ) do |f| %>
+2:   <%= f.error_messages -%>
+3:   <p>
+4:     
+
+    app/views/images/new.html.erb:1
+
+Rendered rescues/_trace (41.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 22:56:34) [GET]
+Rendering images/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/images/new.html.erb:
+1: <% form_for( @image, :html => { :multipart => true } ) do |f| %>
+2:   <p>
+3:     
+4:     <%= file_field 'upload', 'datafile' -%>
+
+    app/views/images/new.html.erb:1
+
+Rendered rescues/_trace (96.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 22:56:35) [GET]
+Rendering images/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/images/new.html.erb:
+1: <% form_for( @image, :html => { :multipart => true } ) do |f| %>
+2:   <p>
+3:     
+4:     <%= file_field 'upload', 'datafile' -%>
+
+    app/views/images/new.html.erb:1
+
+Rendered rescues/_trace (36.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateImages (20100128003226)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("images")[0m
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 23:14:14) [GET]
+Rendering images/new
+
+ActionView::TemplateError (No route matches {:action=>"save"}) on line #2 of app/views/images/new.html.erb:
+1: <%= error_messages_for("image") %> 
+2: <% form_for(:image, :url => {:action => 'save'}, :html => { :multipart => true }) do |form| %> 
+3: Comment: <%= form.text_field("comment") %><br/> 
+4: Upload your picture: <%= form.file_field("uploaded_picture") %><br/> 
+5: <%= submit_tag("Upload file") %> 
+
+    app/views/images/new.html.erb:2
+
+Rendered rescues/_trace (41.8ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 23:14:58) [GET]
+Rendering images/new
+
+ActionView::TemplateError (undefined method `comment' for #<Image id: nil, created_at: nil, updated_at: nil>) on line #3 of app/views/images/new.html.erb:
+1: <%= error_messages_for("image") %> 
+2: <% form_for(:image, :url => {:action => 'create'}, :html => { :multipart => true }) do |form| %> 
+3: Comment: <%= form.text_field("comment") %><br/> 
+4: Upload your picture: <%= form.file_field("uploaded_picture") %><br/> 
+5: <%= submit_tag("Upload file") %> 
+6: <% end %> 
+
+    app/views/images/new.html.erb:3
+    app/views/images/new.html.erb:2
+
+Rendered rescues/_trace (41.3ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 23:15:29) [GET]
+Rendering images/new
+
+ActionView::TemplateError (undefined method `comment' for #<Image id: nil, created_at: nil, updated_at: nil>) on line #3 of app/views/images/new.html.erb:
+1: <%= error_messages_for("image") %> 
+2: <% form_for(:image, :url => {:action => 'create'}, :html => { :multipart => true }) do |form| %> 
+3: Comment: <%= form.text_field("comment") %><br/> 
+4: Upload your picture: <%= form.file_field("uploaded_picture") %><br/> 
+5: <%= submit_tag("Upload file") %> 
+6: <% end %> 
+
+    app/views/images/new.html.erb:3
+    app/views/images/new.html.erb:2
+
+Rendered rescues/_trace (41.4ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateImages (20100128003226)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("images")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateImages (20100128003226)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("images")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateImages (20100128003226)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("images")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateImages (20100128003226)
+Migrating to AddFileColumn (20100128012320)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateImages (20100128003226)
+Migrating to AddFileColumn (20100128012320)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateImages (20100128003226)
+Migrating to AddFileColumn (20100128012320)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateImages (20100128003226)
+Migrating to AddFileColumn (20100128012320)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateImages (20100128003226)
+Migrating to AddFileColumn (20100128012320)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "images" ADD "comment" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100128012320')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("images")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateImages (20100128003226)
+Migrating to AddFileColumn (20100128012320)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("images")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateImages (20100128003226)
+Migrating to AddFileColumn (20100128012320)
+Migrating to AddCommentColumn (20100128013113)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "images" ADD "data" blob(1048576)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100128013113')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("images")[0m
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 23:33:25) [GET]
+Rendering images/new
+
+ActionView::TemplateError (undefined method `name' for #<Image:0x5d8554>) on line #3 of app/views/images/new.html.erb:
+1: <%= error_messages_for("image") %> 
+2: <% form_for(:image, :url => {:action => 'create'}, :html => { :multipart => true }) do |form| %> 
+3: Comment: <%= form.text_field("name") %><br/> 
+4: Upload your picture: <%= form.file_field("uploaded_picture") %><br/> 
+5: <%= submit_tag("Upload file") %> 
+6: <% end %> 
+
+    app/views/images/new.html.erb:3
+    app/views/images/new.html.erb:2
+
+Rendered rescues/_trace (41.1ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateImages (20100128003226)
+Migrating to AddFileColumn (20100128012320)
+Migrating to AddCommentColumn (20100128013113)
+Migrating to AddNameColumn (20100128013340)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "images" ADD "name" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100128013340')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("images")[0m
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 23:34:47) [GET]
+Rendering images/new
+Completed in 65ms (View: 60, DB: 0) | 200 OK [http://localhost/images/new]
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 23:39:37) [GET]
+Rendering images/new
+Completed in 206ms (View: 202, DB: 0) | 200 OK [http://localhost/images/new]
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 23:40:51) [GET]
+Rendering images/new
+Completed in 66ms (View: 60, DB: 0) | 200 OK [http://localhost/images/new]
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 23:40:53) [GET]
+Rendering images/new
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/images/new]
+
+
+Processing ImagesController#create (for 127.0.0.1 at 2010-01-27 23:40:57) [POST]
+  Parameters: {"commit"=>"Upload file", "authenticity_token"=>"qF/m2fDch99FeuLL/Lk6CGnooCC7IGxWic5fvs2dQRM=", "image"=>{"name"=>"asdfasdf", "uploaded_picture"=>#<File:/var/folders/Rf/RfHTt3KLHB4FkZ9w0KlVK++++TI/-Tmp-/RackMultipart.3169.0>}}
+
+NoMethodError (undefined method `content_type=' for #<Image:0x260a0d4>):
+  app/models/image.rb:18:in `uploaded_picture='
+  app/controllers/images_controller.rb:10:in `new'
+  app/controllers/images_controller.rb:10:in `create'
+
+Rendered rescues/_trace (33.5ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateImages (20100128003226)
+Migrating to AddFileColumn (20100128012320)
+Migrating to AddCommentColumn (20100128013113)
+Migrating to AddNameColumn (20100128013340)
+Migrating to AddContentTypeColumn (20100128014149)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "images" ADD "content_type" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100128014149')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("images")[0m
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 23:43:02) [GET]
+Rendering images/new
+Completed in 71ms (View: 67, DB: 0) | 200 OK [http://localhost/images/new]
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 23:43:04) [GET]
+Rendering images/new
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/images/new]
+
+
+Processing ImagesController#create (for 127.0.0.1 at 2010-01-27 23:43:05) [POST]
+  Parameters: {"commit"=>"Upload file", "authenticity_token"=>"qF/m2fDch99FeuLL/Lk6CGnooCC7IGxWic5fvs2dQRM=", "image"=>{"name"=>"asdfasdf", "uploaded_picture"=>#<File:/var/folders/Rf/RfHTt3KLHB4FkZ9w0KlVK++++TI/-Tmp-/RackMultipart.3190.0>}}
+  [4;36;1mImage Create (0.6ms)[0m   [0;1mINSERT INTO "images" ("name", "content_type", "updated_at", "comment", "created_at", "data") VALUES('banner.png', 'image/png', '2010-01-28 01:43:05', NULL, '2010-01-28 01:43:05', '‰PNG
+
+%00%00%00IHDR%00%00Ø%00%00%00Z%00%00%00V¶¨%00%00 %00IDATxœíy\SW¾À%00BH‚%25¬.@«¸Tp™×Ñ*vº|fÆ¥{­Ö7mgæ=íÌTß¼¶öM«3]§jgiíŒ{§­Ší(jwdiÃTB‚„5Üûş8p	hBãòû~òÇ½çû;¿ßïœüÎÉ9çŞp¶—«AAÄp†ñµ‚ ‚Ü¥øùZAAî^¸€"‚ ‚ø.CAñ¸4ƒ ‚ ˆÏànVEAÄGàÒ‚ ‚ >—fAñøÔ‚ ‚ >—fAñ¸YAAŸ{DAñ¸4ƒ ‚ ˆÏÀÍª‚ ‚ø\šAAÄgp§DAñ\|hAA_K3‚ ‚øˆ ‚ â3piAAŸ›UAñøAA|¾YAAŸq·mVåøZql«·cWXÅwÁüh_«p[r·,ÍD%25İ—¼)T»ãÛ9tŸ¯Õ¹“³''ı6L0ş/¥óĞÕ€mõaì*«Ø‡ŒQ€ŠšøÀäm\¿ÀmßÎê·u{Kì]—¹ÍG"Ïä¹iwOíí¿”%00"ÜØ­½é-ª¸§3ä^lùgiÃÖÑ+é]i·8}æq!)à²«ïBbD“ÓeÅˆ&xbë@·©§¾¡íhÕ¥=ıt/%00¸ÛVoG|õp«Ü±«ˆ;»Šoñp7FªÇÚà/%00Q ´­û{o‰½KàúZÑ¢¿zŠ=æsE’à‰‰„«‘ğ¸!®ˆÍ?Êó¦IôÊwÉ»ÒnqÜuõ]''/ñWiÒe%00ĞÑK]1_„Çˆ2¥¡SR¥…Ÿ*¤™»Á#}#ÔVG+[:NÑíğy¹^©ˆ±“ìsFª¬[<Ü‘ó{úMä €ìE±w	·ıÒÌóO°Ç²°ìE™ï;$°‘?ğwÅä‹ú¦É¬lÙåÿxWÚ-»®¾«¸/ù•IQ?2tVıîwìÏ¦ Ş¸©ãW^ê8KÓpw8p¤oÄ´ñ+ Éx|Œw«\¯TÄØIö9#UÖ-îÆÌùÌØˆ½+¸£šaœ†ÍãŠÉ%25[K¼7œ÷®´Û]}÷ Œ^4)êGí=ûÎ=FVa]ÖÖãµ¯:ç¿ƒxãoD·Õ8F†{Vîè+bì$ûgÓn—p7FÎ¿êô‡çn{jæ¶''„ë]™¢@Ï˜éD!/Ò»İÍøsx9ñÏ@±öUûQâL¿­çÆBø1a‚	?|¹· dïÂwo¹]L»Å£&}»À…;éï¬-70ŠaxşÁSc—+"çŠ¥İVCÍåjú3ÍØç
+âË=.T|yq­}º‘÷ø„ˆ<!O2`ëmëÖÖ¶U_Şo£­7ĞË[ÒÔñÏfÅ=VÙ²÷Ø÷.ı$ë’à‰gšw”ÔoeÍ{|¼ø^!Obèjé8sºy»¡³ÊáÆÇ§Ãã
+÷Ÿ{BµœMŒ¥ÿ8ã=Wøö±)$%25"()''á¹Ğ@ù?N?:e²ü§1¡™åïŸ£ş>¢Ù#Íš:~y´(%00.›/œjúó¥sÎeaÙ“¢~:9˜?~¦îÚ³º¿ÖŠìõQMx*T0şcÍbA@XVÜã	’Ù‚%00±±»VÓø^£±Øƒœ,ş‚É±?OŠ,	”Ğ}—:ÎnŞ~Å\ÁfğÄv''"çyâö&}»ÆÕ{\k«Şu A½(9z‘$8Éßµ§é»+_|ßúe_ÿÕIQ?êëï¨oû·ëŞçoÄ³³Î²WïÏø9Ğ4¾_ŞøÃ½“cv¯b]áëC•/°‰!ÒŸå|%00ÿ®ùmõålzºì¡¼¤_RíšçŸô¼\—+Â¯KöÌÕàZ(Œ_˜ö–H ÿ´¼PÈ“L‹[-Ê%00ğ3tVjŞFµ—¹nÚHáÎ5Üm¨äA\Pà–óÆ¡º©á£iÒw·ıfUw‘†NÉWş^Èº¾3õÔK‚''fOx""(ñ`å/ì³…	â¦_ápoH té”¿ñ%25–~skg¥ @,›&›Æ%00]Ù²û…zKš±K%00"¦;¤y‘d—na°‡ˆN^”ù>?@Ô×ßaè¬	ŒVDŞ1óßßıî»+ŸÛßËã
+âú:¤÷tLˆ˜%00óSß˜1ÃÜ«oëÒVÙ}=œ™6~e¬8§Çj2v×Š¥ãÅ÷Ä†ç®úeá+6O¸0á¾äßF‰Ò ³ïR[×w!ü˜q¢Ôy©¯1•4›ÓF[Ç‹ï€ÉòŸN¿œçÔÖõİ%00mI^˜ö{™®ç$ñÇ-Êü \×ÑKºªƒx‘ñ’YqâéÅÚW«.íñØvg&Dä%00Õ^êú-®´U¯;Ãñ_ú‡xIî7v×2Ì€8(ñÅÚ{ƒÊ€Íò·²û{¬½7,Îß}{9%00ÈÂ³ ­ë{K%00|wù_Î÷^î8%00Ñ¢LûDyX69…eÛGíhQ:%004›JFS®‹AÃïJöØÕ.†Ë@gxP<%00dOx2iÜü~[O{OCoœ,<[6íëšßØg¾±iÃ†;Õpëûëq@&¸ Fé|M“¾3¸³şôÎ…	UüÓT{ùî3?ïìk€tÙƒ3''ş:!rN/ºËrùÆ¢îUüg_Bµ—~ay%00](›µ°ªeÿMÜè%25imÇl– ş¸Èà”V»5ùêvõ]¹b¾%00ş~¼ù©oğDåh?`%00¤IgNüõìI/_1Wµ÷Ô;kx]¡N
+wõË
+Ïıºæ·Õ—nŞÇ„N)şş+ô»ˆ¸Lù£3’^˜3é7úöÓ½ıí$O¯µÏ-oü êÒR#%00œ|å¦IÑ''ËZÛ:Ú»›ÈÁ=ŠµÚ+‡OÖı¡ÛÒ
+%00óR^MŠš—÷¤9IYRßáGÿëüsM¦“¬3¤½1kâ™ºëÈÏ#lw&2D	%00Æ®Z×¿q®´U¯;pjìÏâ%25y½Ô¾³“Rø\ÑSş,	xÅ\Ùe¹|^÷I·Åàº÷†Ç©í;÷%00¬}%00Njß ìæç¸ÔqÁ:ĞÄ—„ğeæ>=I”…©†²ì=L‚»ÎT:˜èQ¹®ëñªd]íz(è±^%25Iãæ—7şùtóv2©0-nUnÂê¼¤_7›JØçMnbš““]WÃ­ï¯ç%00\P8ŸqÛğQ5é;‚»nˆÎTzàüÓC!¾»r„Şüx±á¹%00p^÷1ûsŸş¦3´^”6@÷5™¾€xÉLûtò{0O¾_$]ê8WÖğ.iú%00p±ewõ¥Ïüı²âVy -]ÎS;]ì‰k_«ĞÿÓîÆ©ör78Eº„ÍÓÛßş÷²Åeï²5ÀÔ¶@¸p›uQyã‡«~Eb%00h[{œ%00ÇåG‰Ò/¶ìbã%004›¾½@}ÊáøeÈòØvg‚ùã%00`¨w	WÚª×˜³%00Î6ÿ…í-æsºÀjë>xñ…–Á7÷¸ì=¯Ãè¯€˜Ğk¿ eáY]}WŒ]µÁQ¢@Iò"DY¯µİĞU3šòF4¼"ÙcW»
+yIı5ï±K§›¶]î¸Àã
+•1‹=6Óu5Üúş2 » `tíÜeÃè&}«q×DN7mg%00X:É?''À…»i%00â{k§''ÒH/™Å¦p8ş±áj°[—IÌ€†6ÇõÔï[9Üë”Ë[Ì½”CJ£ñ8%00Œç^Ÿì8°''ÛßxÃ=¯o¿î1Ö.%00ğóf…Ñ•œIãæ@ËUÇwâ‘¥ß(QšCºë¶;ÃõãÀ€+K×C¸ÜV½é@Q %00:zõöÙÈø)æú©cw½çEtí¥%00:™œ†''óÇé¯&$Ï"édí4µF]Ğğ‚d]íA(h5W:¤?$Èx†j¸öMU@v1@¦»nøÜ¤o5¸6ík¼†fl6%00kÔà%25šq¸:lú°¢êZMŒZ ğ¬?G 3•µukíƒˆ»Šy&­®õ˜ubo¸@!àJº,­%00 ›êÏt÷›å¤O
+*l6›±³ÁÁÒ6s­ÍfóçğƒbØ	@×Í'')Ö¾›¶™‘\İŞ¥³Ùl¡ãÒƒùÑ©ÒbÃUaÂ8>7„Ãñ©t×õt%25§$Hi³Ù²âH“şÄ^ŸÀ€P›ÍÆç†±™]·}$ú,ş~<š¦]‘àV[¯:°£G*ˆDÚgâEÙl6ë@gŞÆÀ¾ª#è@“¡Ä–`‹É ÙbDÓl6[cÛ7½ıWÓ¤?‰M½Hí€qÁé6›­±íÛkõèf¹î¦c©7${ìêÑ‡%000v6Úl¶ĞÀ8WMpròE$Ï²;Êİ(a/ÖuÃ=nÒwwİfÕÑPüık¡‚Ø(QÚ=Šµ €º¯åê™óÔ§MÆ“7¿ÙKÒúm½Í¦’xÉÌxÉÌ
+ı.Ú»ZßvŒıe,‡á«c>…<1ûµÿ!!3¨|®È>1Uº$/é%25?Í\íilïiàqƒ#‚’~%00}„<1%00ŒT™Ãğ½ı¦`~4ŸêE™ï:ğtÓ9É/Oûy³é[2Òò"¦Œÿ)%004OØçü!½ç€©§¾Çj)xşAV[·<\%00Í¦ë@7ÍÈ†vù‘‰îf“„oM<vµWBeÀ%007İ1ŠHŞÈ0B€M;wİğ»­I;€7°˜wşybä}q’éÑ¢ŒpaÜxñ=ãÅ÷”Ôÿñt“Ûo¤öXš¶µ(^23^2‹Dâ"î»u%00`8àçç8oÌ.r8¾©w?N€½%000^|ÏìIëÆöMİ›Ô.äáªÅ“ÚhfÀÃ=pîiİõO''¦îú`~t¸p¼wÅzİU—öñ%25êø§–ûy[×÷CK‚''úûñúú¯–ÔıÑ>çé=g¨vÍÄ¨Ñ¡Í¦yx¶±[K¶R¶\=#W‰e–Ë‘!Ê^İö“Ş.xìj/…fP”§ŒQDòn@†áŒ®»eø]Õ¤¸£šqí5"Ã_uHY£mıJÛú%00óÇÍN^?!bº:şé
+jùİà¦bH«7³ÑVyx6×OÀç†ˆƒ­¶îfãµMÔ}A¼HA€Ø¡¸%009°ôw:\rÙüèŒsNA€%00z¬F6=+n%25%00\ şq¦éo”>Êœ½VSH ”ÇñØ"×Ñ™ÊÆ‹ï‰«Ë>pñWÚêX8PÓğá¥«Ó_''ÿfµuëŒšÚÿëìkµå®÷ÔICg%25‡¥ÙT61jA´(£ÛbâsE•CJ4›Jäá*YX¶±»Öß×l*q±ÁÜ \wÓ½.ÙcW>%00@€%00ôö_uÑg''eDò$„¤¹s€‚ÑE	·÷¬Ißø¯İ!š¡iš¦éa¯^¢—Òo(Š|:ûZ\üMÓÀø…<VÌ]iÖŞ&c)0~ÒĞ¬ñá¹4M×··Ñl†+Õ4M‹…‰7Šø±4MØ¬¦îFó¾.''‡ñsVx$ºîêˆ $š¦¯tTÛ¥L¢iºÉXvSw¹^M®ç¼tµ’¦éáD-rıóİ¥C6[THfdÒãâœÓÇÂqá÷æ§lì·YŠ¿Ûüş±Yï›ñÙ¹5íİMÊ¸î½a>#|#\÷ss[	MÓQ¢ièTš¦›ß’ôÃ74MËÂ²¢BÒišnj+M¹î¦¦*oî±«=Î*…ÆÑ4mèüŞU''89Ùjx5„º Ür¾³X·÷°Iß?ß«àİÁ­Kî¦Û}l´…ä²ö›=WÌ}i­G &43<¸Ûúoç«ŠÈYÀ\Wbâ¸û%00 ÙTJÓıl"ÙŞ ²Ï™!pp 
+şn™`ŸSjŸÈ¿„ÈY%00Pg§-‡Ã%00ò†ß¡Ï8Q
+‘àÏ	ğ¤š\Î©½|%00”Òûù~!U_RäÜÇ¦µjz‘"bö%25tYZ+ô»`nÊïx~B[‹SúX8pnÊïbMİ{çuŸX:FRÒï¹nã`«»y\ê²´^íiŠ
+I‘‡gĞ}ú«§Iº±KÛc5çÈÂ¦1Œ2iFUî(‚ƒ%25{ìj·B)94Pê $qÜ%00h4w£²®·Â5<ó¹«!%00\Pî9ßIC·÷¬I»‚nåp''}[‚;—\L÷óã-ònrôı\ÁP"G­x%00:zum=un)6Jim'' &4S.Î¶ÑÖãIû«ÕW¾ììk		”ÎIŞàïHcÃs&€)¯ÿĞ>s{O%00¤É
+IN??Şìäõ$yDápa‚+¾µÿ°«³“ÿ;q\>›8kÒ¯ƒùQW{š¾o-b3_é¸%00iòB‡KRÒ¤Ks&"‚’<¨>×sÖ¶½l¾Ä‹\4õm±PÁ¦G%25.¶=2XyS™3''ı*0 L ­üï›zædí[†ÎjqPÂ²ì¿ÊÃUl:×_!ä>åï<0a,HöÖÍLş¯ÕsN¯szõœSçıñä?IÃ¦yæ½a?ÃêC_švSg2%00Í¦27dBÄt}ûi3À¦7KÂâ%253®tVZlİ£)×İ áüñŠd]íV( äMúešt)€ÃáNOzA<©Çj¬ºô/×+ËÁ
+Ô¸©LC¨[Ê=ç36%00ğzf8ãQ“v+İ².C³U|ÛC3MÓ%000¬QäÍ0W‡Mw6%25F4Eš5{Ò·÷4õõ›Ã„±B^„¥¿»èâ†»Ñ»Ò%00 Ëbhïn"¯Ø«o+î¸îOÔhËçç_x`Ê»ÉÑ÷+"ç»k¹¢0a%00s¬úµKì3ŸjøhnÊocB§®¸çKSOc¸0Ï•Ö¾;1z~˜0nêøå‡+}c:Àç‰HNCg]AÊï§''şÂÜ×"NàqCúú;¿¼ğKÚvm/XIıûK¦L‘…e/¿ç‹öîæP¡,ˆ''9^³yZüŠ ^äŒ¤wúùJ¶Æ]Ï	À|qîÅÅSß•%25?¤ú´£W×cmâEˆ2†±…
+ã®˜«nlû€­Ÿö§ ßf¹i­Ğ–½§Ÿ^şš<<ûÇ™o÷X½ú%00¾8HáÇáÚhëEj7©×ÛêX8pÿ™ÕSã~Í?àpüÃ„qò0µ,3ëóÿÙdüÆ]ï93ÒWµŞprbÔ<Õ„''â#ò8¿sÍ;k.>‚h2–¦I8†{9MÆ’IQÓ=(×­ 1,^’ì¡«İ
+¤hcWCŞÄ_eÇ?ÑÑ«''ÑÀ:ĞóeÅ¯‚ÌLsr²jŒ]@v+@¹åü¶®ºˆ Ä™“~M×0äİ!n5i·BĞ-nWÍ‡ƒq:6Ï°WÒDéŒ¥+Y’*}`|„:T8>\×mm«j9pªq»¹÷fyW%00%004N(e‹xşAuW¾v¶È`®ù¸ôÁì	ÅIrÇ…(­]õ†â³Mqnú5—>€É±‡ÅG%25¶š«Î6ÿ½±íD£ñäü´WO7íp>’‡)%00ÀF[ÿuö¹‰ÑóSe‹%25ÁI6ÚZÛúUIíÛ½:ûÌ-¦ÓÎ=—=á±ÈIãDÉW:*_\ßÒ~º­»naúkçuŸŞ¤ôÔ¸k9»-†OË™ûHbÔ}aÂ	Áü¨.Ë•
+j×yİ§W{šn"àëêWæ$¯÷óó?Zı{W¾J–~óş3O''Få§Ä,Š
+M‰¥Zmİ—;.êŒ¥U—8¾wÕ…¶êuøltÿñï^ï·]ëx8ÿ‚ÔMIQù9	O5µ±7½ç †Ã%00%00×¼f³Yã#gD''µ÷4öõwÜÀ«úÁçpt¦RûlÍm%25CéeÃ˜ïA¹.áğ–d]íz( œÔ¾ÌÊ/“''ÑŒ­ŞP¬©¯­Kë†iÃ9Ù]5Æ. » .:ÿhõÿÌMùmH`Ldprƒ¡ØÃ=hÒî† [Î_Œá‘1eÅôƒ^ø‡Å÷YmİcSçævÌğ÷ã¹ôšÈxæÀÕ÷€}g&lÆ2A2ã?2ß´ÑÖwŞã5‘[‰‘ªAÆ.ÍÜ¶ƒ¨»›˜ĞÉ‚€ˆÚËGúºÆ¬_¶Úfñaéw%009Ğfëçpüı8‘!À/˜¦é¾~3FŒ;•¡µ«ù¹³–fî&Ô	OÀé¦¿a"^ÄĞùı8‘Rı£–ö3ìêLh <;~%25%004·•b{»óÁ*F~XğÍª·aÂ	Ó“ÖÈÃ§UR{Õ¾V¹£(şnó¢©LŒÊO7ÛØUoèğÂÅA%008]–+%25µoûZAAî4¸ôõ×9w“¢Œß[©ÿìß5¯ã*â].]­øÛ7NÿYxV˜0–ç/ -­æïÛNmú»e×CÓ4%003@Û°S@~`8¯îOõµˆ{„
+xáíİ¾VA;‡¨Ğ4c§v€Æ½YÈw4e„ø„^k{¯µİ×Z rGqùêOÒ"ÈsGıé‚ ‚ ·~¾V%00AA».®Ì ‚ â+piAAŸÁep$‚ ‚ ˆÀ="‚ ‚ø\šAAÄgàÒ‚ ‚ >—fAñ\Æ†3"‚ ‚ø.CAñøB3AA|îAAÄgpi\›AAÄGpßEAÄGpiœAAÄGàAA|pBAAÿ5ƒ ‚ ˆÏÀÿšAAÄgàŒ‚ ‚ >7«"‚ â3¸4şé‚ ‚ >gDAñ¸YAAŸïAAÄgpq‚ ‚ ˆ¯||W*Q.ş2%00Ö¼U×R%00
+©zêy%00Øò•–¶j6±C÷£/‘›ŸY¼S!U“ã^‹YS³û³o6@AÖr/ËaÍ[E§¶@ O´ráûë‹_ØA$°²Ö$ÊsßÙÿğ3‹wR†ÊÊ†#Ï,Şé î/ŞI WIAD‚ı)%00üøŞõòÈT{=2ûõˆĞXÊPyÉX“¼”-XÄ¦³(CeQùÖ>«Ù^ ërW-UB,"§ÄKÏ,ŞÙk1ï8ø$«[yÍòšİÿ÷L½³!D,›RK•¿ğQŸÕL¬f•$%00"Š•%00Û¿|’(It`3°
+³•h_ºf+îøùíÄ4{
+²Öäe®ğE-mÕ‡Êßªl8B”)È^£J.$éûO¾BnÌN.$dUÊËX‘–P%00%00ïìAÜG*Q.ºwÃ©ïö”×ìq>ÍËX1#c…X$7™©v€	%00?¾w=‰Q&3¥©Ù}äÔVçüÎş‡²×&Êr¤êùv1³¢¾èÓ¿ØgítP‰=5™©;%00`Ñ½LfŠt:¼‡æl%00ö^{ÍŸ^ô	%00T6Šğ!+¼%00¬]%00@òì8ø$[t /dÑ½TÊB¢UÑ©-¤_¶s‘J”ÍŞ,‹L±Ïüã{×Ë$)ïx„õ’óiQùû¾ ?kÍÌÌ•¾Ho¨*:µåbÃ¢›¾­Šô¹ÙÉK³&-ema•g3ØŸ·¤''%00€½@`—fDdH‘5ii¾Œ”À%00É“5q©BªVHÕEå[Û;)%00 é‡5[%00 Q–33s%250ğÙ7›%008%00 ©ŞİŞ©''ÅÔêËHæ>‹9<X–\xüü©$…<prSŸÕœ\ØŞ©R50pâüGDò<ÕZ“™¬¡¡«ìŠ’Ã)%00È%25©öz†‡ÈIåŸÜTµ¦ {mEı‘öNjñ½/+¤êı''6¦Åç+¤j¢°T¢œ™¹R"ÿèàS%00ÈÍÌ\iïâ+…T]«/«o)#§ÄKÄcYk‹Ê·İj©R¢Û5Ì ÄF©D9Oõ<%00§¨|,;~~%00İ%00€•:”’Ÿªf«Éğ“9¯«”…;¿~±N_¦æ8WÉ\§/«Õ—@^æ
+…T½é¯yìÀ%00–/x/=¡ ¢¾¨¥­:;yéÊï¿½ïáú–²•ŞWÈ•¼ô™Å;Izx°ÌA%25 ØF‚ â.‚%00Q¢,§V?úìOó³×ÌW=_«/ÕÔìN”å,š¾Ï9R¾5?{ÍÌÌ•NnÔª
+Tkç«¿Ú©?¤y%00TÉ…b‘œ›Ì)‚œLf*Aª%00MõnS''%25‘«”…âùşùÎ*ÕêK<ÑÌÉ+Ó
+Ö8Ùd¦TÊÂÊ†#ÌÈX‘PpàäÆ>K§³!dô#‘“Ÿ_@RX3ÓâóIJz|é5y!¿xğ±H^|n;%00¨”…‰²œMA†)d¼ÅjòÌ¢&3õÎ¾‡Å"ùC÷m–IRşçoy2IJ¢,‡Èö§¼ÒÍ™ÌéæÀ®Ğ·U©’W,xÿ}×µ”ŞÈN^úĞœÍšêİÄ6ƒÃéŠïË$);¾|%00Mß°bÁû›ş:ƒôM\Ún³j¯ÅœP°óë =¡ ×bğE%00@ò¨”…Zª$I;#cùş“€fhûŠÜğ³3''¯<¤ÙÂ%00%00å5{HWç@­¾D¥\ÆQHU$E!UëUb‘\S³›”E3´Ñ¬#’ç©Ö²Çš¡íÕv>%25š§ÅÏ->¿#-~.1dÛùõ‹Ï>°sÑôõë(dêCš·(Cejü\Vá@èŸ(`­ÎN^%00Ze0ï„%00%00½IDATªD¥,Üwb£}oığ}›7ú#»ru˜§Z[QXßV%000$İÁgï½¹º!Aª"™{-f±H‘¬o«N‹Ï''æ°¢²“—’oQ^æJMõµöÇ%00ó“9¯©”…;¿z‘´Ëa+‚4­¾„Œ`æ«—J”l™DIÚßö/Ÿ€cç¶¯\øB¦îµt(djMõ®_¿%00ššİ~v"/sE­¾”Ôk1§ÅçkªwË$J±HNÔ¦q74‚ AbÃ†>ûÓ¼ÌF³îí}ÀaØ²şgÇó2WÖşÓR¥ú¶*ãWTVò£™*«Ş%00
+©Z,’“¸GäÀĞék%252×ÅLµrYj|~E}‘½JZª¤¨|+%00(dj±HN3ÌşÓò<}½ÑLÍW=¯¥JÛ>’!=–±H¡Ô·U¥L˜ÛcéòCÙ«Ó&-1šu%000=c9Ñ<;¹P,’ï?±±øüv%00¸Øp¤ {T’B”4šuöV$Êr|‘Ñ¬ÓêKAa!Rša˜Á¾•±·t¨O)„¡nnÿ‰½V³L’’Pp¡îğƒOÀñs;V,|/^ªÒ·0LÖ¤¥İ·¹¬z×§_¿4LÅÙbš(Ë1šuZª´×jî±˜¤*†T`pF„èTQW¤J)L›%00¾HSµ[•RÈ00 R
+ø¢ãçv%00@zBÁş@YÕ®9ëd%25C3%00°xÆË=}WÉ¥wö=Âf¯ÓkTÊe2‰R!ËÑR%25¢X…LMF<uG®ı€vè¿ìç<"SŸYüÉHW€2TFˆb³•ËŠÏíÈV.3™)R¯À@-UZQ_”P(Ë1™©â³ÛÉ`U8BÛk1*ÛBdæe®Ô·UÖlI’çf$hªw_,}sAÎº¼Œåd"‹x	%00ŠÏmW)Mß@LfèÁt{OÕìeäk#“¤‚İœ©ˆìäBcÙ[é	ƒA3À@xˆ<=¡ øÜö¾9ëÂƒåíQ‰Ì¡™Ì+|ØŠ ™ÅÁrRtzÂ¼^‹™j­d}˜:!%004U»ÙI,bKAö%00ĞTïœãé ´TIzBë@¢v`@iÖägDñ`h%00%00H7%00‰Ò!?´øÜv6¼hªw/P¯K”æœªÙ›$Ï}á¡/Œf]-Uzªf¯ãïáë#–õ†ª''7]ËÃ%00%00œªŞ«V.‹‰H®¨+rVIÀÉ#Sw~õ"0Ğk1i¶.±á™>€''6]WĞõıZE]‘:eYÖ¤%25¦*C1¯¬j—:e¹*‘g(æ;»­×j^ ^''–›:)òS™Äd™$(Òl5™)"M™bß¹TÔQ†ÊÅ¼7W7h©’Ê†¯NœûˆU€ÍInHúŒÌå”¡²H³5I›P ©ŞMJ<U³—dèêØ{“ä¹%00PT¶uÄïÔƒ3ÿÄyÊPYK•8ÿ‘©sp^êº÷ˆTÔ‘I2Â -!ßd¦.69U³W,’§ÅçPø5ô­•µT)ùØ§_¨;%00
+©:Q–C®&ÊsRu¯ÅÜÒVuS±.RVµK&Q*dj™DYVµËşÒ''G^ ?Ö÷Å~ñ(\Q_$à‹æ«×€T’"ÉŸÛ^§/3™©¼É+ÙÌu-eõErÖ‘1KO_Ç¡²-IòÜ¼Ì•öé½3ëÁQ%00%00¬^òéê%25Ÿ>·Ád¦Ø	.£YGúøÅ<%00°Ÿv#lÅçv”×ì€™“W°—|‘–*‹ädÄà`—CE¨R
+IÑ2‰òPÙ{?*l7÷ã"DÏÅ¼ô„-Ubo&‚ È€¦z÷Û{.«Ú%25à‹Ô)Ë]²“ÄÌ‘ ‹,µúÒKÆ×K1™©Z}iE}Q¥cÑŒõ$±øÜv-U"ä‡;»MÃ¾ÌÔIi©’tEAº¢%00H?I9qş£SÕ{`Færö‰É‹f¬vÉÎg—ìÌR.L·˜Y+Lfª×j~gï#ûOl¤•IòÜÅ36<³äúßí×#“¤DˆbOœÿ¨V_j4ë®+Ñ2|/ ä‡j©%00xhîë7ìÀ§_¿´ó«/Ô–G¦Îš²ê.‘“K\š%00`%00ôX:/Ô©S
+fêB]Q¥“\
+‘‘º|ó¹r[ZBÁ…ºÁm&D%00¤+æ%00e¨"?µËª÷8A=}”¡jÖ”U¾¨V¯1uêU)…¼-UÊŠ²ë|J*ÿ´gpt¶emƒsf%00ĞÔìY³îá¹oãDy›­§¯“ÔkUX*Q¦''Ğ4äe®%00€‡çn~xîf’'',DF|Å0œ¼ğ›å''É…a8¬ÇÎnOK˜KÒÙBfİ¡²­ÎŞX»%25%00å9Ï-İ™—¹‚Í£©ŞóhşªµF3¥Õ•±¢ò&¯%00€——Ÿ )i	{‹7•İ¶ÿø¦ùbAÎºZ½†u¾CEÌKß$e­^úÉy½6‹Hö@)¤j¶ÜWŸ:O*É|›.‘G¦R†*Öp­®Ìh¦
+TkÅ"ùÁ²·Ä!²a«AÄHô(«Ú}¸l+%00$Êr+ÜÉ0 »RENÑƒ“L™è®Tåg¯i7·|rä%258òÉ?#sùùÚ"™,‡J¯Ëd=¦³‘‰}k{9ĞR¥D%25†…9ëbrÈ¼‹–*M’çVÔ}5lÿÅ0×4U{-Ø\ Zc4ë¾×•²WÉ8`ÃP„OWì;¾Io¨J’ç’Rş´çqˆü7+O°ÒLfÊŞŠDYB®*¯Ú{ôÌvOôHÁëŠy	1ƒÛrÙ®sõÒO’ä¹l‰×usAr}k%00ÄKUD7%00øß§ÎéUävÒ?·~Ö”UùÙk×µ9x ,H²¤Òlûü)%00˜§^³0gİ´ä%25ä^îuîgMÕnuJa„HşIÕnö’jR!%00|\ô¢É¬€ùêµê”Â}ÅÉÜË|ÕZ%00H”«å‘)GÏlëíë†%00*åÒÄ¡gjjõ¥µúk{qµºùÔU%00PK•’î*B$?Tj·V7òºŒ‹§¦½VW’›«Õ•˜:ô7»…%002‰FÀ•G¦Í”€''ÊPhu%25‡Ê¶%00€XûhÁæ¼Œë·ôöu,}kÉÌ—¯9pHÔ¾â/=ú%25{Jn''"Òl±×e9%00[É]µGzóÌ"ùÁ’·XÉ‰2u„H~ôÌ6¢CZBşì©«Ò
+z-%00Ğ××	%00Ÿ½ğÒ£_>’¿yóÇ?¶"†êzP±Z]Y’<7Q¦îµ˜ÈÛ ©Ş«©ŞMªä¬ëµtêU3''¯ğEšª½êÍÔ¬)«Læ“YGÒ‹Ïî°—¦©Ü½ ÷ù^‹¹¢öˆıl‚ ˆ·èµšÉ<ÿ<õš:J£«’ä¹eU»z­fuÊàó2ìŠ»/uXæ©¯Í—WÎL¨R–(äª‘\²Œ2TÚ/"Dr2ôÉPÜ´ˆa©¨+ê±¬Å~Yú&›˜(Ë‰Å;»­¢î+%00HWÌ5eUzBAñÙfMYµêş÷>)z©×b~`æz{Qb‘ÜŞŠvsËÂœu"ù¾âk“¤¡€''JWh©2”‹äl9eù¾ã›(CåÂœu}–.½¡jæ”åB~¨fÈ?d¦äPéÖtEÁÂœuë¾Ò·U­^ú‰ŞPµïø&²—tæä•zC•*…l²,€…9ë(Cå¶=Å®È´›[È—·n¦ÑêJf
+%00´º’¤X2†bT©…F3UVùOÖì¤Ø\•r)y:fAîóD³ƒ%25o´ó©:¥=>Xò–VWÂ^¬/š=u•VWÊĞ´±Cg4S"¹V÷-smÅa®P¹w
+%00Mkª÷$Åæjª÷04Í&:ä±¯’Á!€VWº·ø•tE¾€/ÒTïÒ¼d~ÎÚœÔe%25ÃĞô±3ÛÒ
+’bsÈ)¹¡iªµò`É[Ä3$=B$''§ƒ)}ÓA£™†²§=}W/ÔV§.+«ÚÅ&ª”K øìvÒªŒºÙSW©”K‹Ïms.ú‘üÍzC•sEÔêKØÌ%00@ÚD /€IŠÍ­¥ÊšşøğKf¾Ì:äè™m¤ö?üì‰Gç½ñhÁfVÛ*ˆÀ²ª]rŸ¿P{˜İ•Âà”‚ Á0ƒ$ŒØŸî=öŠ€''Z˜³ä¼P{xï±Wšşğ³''»ÿƒç
+_ı Õ•t€Á^îZDb%00%00X	%00P«ü6¸c ´òŸûŠ7Ú1¢ƒ:eÉcìĞıù³ÇÍìe’Ç!î9C"|NêƒšÊİlb¶ò%008v†ğÍ³¦¬R)—|X{èÏŸ=şhÁİÿ>%00P­•Z]	+-BkoÅš7ã¤’I³§>F4ìéëøøğÆæaÍOOÈòC5•{´ºoIò|õ•²pï±W†zÁg•ùğZ´g€¡é¾«~aÍ²¬ú÷^ÿxa’<—¤ï=öÊc÷ÀŞ¨Õ•ŸÙŞk1|ø…fnøÍÊÎ9«ÿ0Ş©ö%00@™"ä‡Í”éúİ$2T´‚ˆ ò É#Dr£™røÅ/‹LòEÎé·;Iòš`¸1¾H™âbæà±''Gº‘˜@ªì»ÎêÿÃ‚ ‚ ¾‹oy@AÄWü?Î™ƒÍaş¥%00%00%00%00IEND®B`‚')[0m
+Redirected to http://localhost:3000/images/1
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/images]
+
+
+Processing ImagesController#show (for 127.0.0.1 at 2010-01-27 23:43:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mImage Load (0.3ms)[0m   [0mSELECT * FROM "images" WHERE ("images"."id" = 1) [0m
+Rendering images/show
+
+ActionView::TemplateError (No route matches {:id=>1, :action=>"image"}) on line #2 of app/views/images/show.html.erb:
+1: <h3><%= @image.comment %></h3> 
+2: <img src="<%= url_for(:action => 'image', :id => @image.id) %>"/>
+
+    app/views/images/show.html.erb:2
+
+Rendered rescues/_trace (44.6ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 23:44:49) [GET]
+Rendering images/new
+Completed in 64ms (View: 59, DB: 0) | 200 OK [http://localhost/images/new]
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 23:44:50) [GET]
+Rendering images/new
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/images/new]
+
+
+Processing ImagesController#create (for 127.0.0.1 at 2010-01-27 23:44:52) [POST]
+  Parameters: {"commit"=>"Upload file", "authenticity_token"=>"qF/m2fDch99FeuLL/Lk6CGnooCC7IGxWic5fvs2dQRM=", "image"=>{"name"=>"asdfasdf", "uploaded_picture"=>#<File:/var/folders/Rf/RfHTt3KLHB4FkZ9w0KlVK++++TI/-Tmp-/RackMultipart.3209.0>}}
+  [4;36;1mImage Create (0.5ms)[0m   [0;1mINSERT INTO "images" ("name", "content_type", "updated_at", "comment", "created_at", "data") VALUES('banner.png', 'image/png', '2010-01-28 01:44:52', NULL, '2010-01-28 01:44:52', '‰PNG
+
+%00%00%00IHDR%00%00Ø%00%00%00Z%00%00%00V¶¨%00%00 %00IDATxœíy\SW¾À%00BH‚%25¬.@«¸Tp™×Ñ*vº|fÆ¥{­Ö7mgæ=íÌTß¼¶öM«3]§jgiíŒ{§­Ší(jwdiÃTB‚„5Üûş8p	hBãòû~òÇ½çû;¿ßïœüÎÉ9çŞp¶—«AAÄp†ñµ‚ ‚Ü¥øùZAAî^¸€"‚ ‚ø.CAñ¸4ƒ ‚ ˆÏànVEAÄGàÒ‚ ‚ >—fAñøÔ‚ ‚ >—fAñ¸YAAŸ{DAñ¸4ƒ ‚ ˆÏÀÍª‚ ‚ø\šAAÄgp§DAñ\|hAA_K3‚ ‚øˆ ‚ â3piAAŸ›UAñøAA|¾YAAŸq·mVåøZql«·cWXÅwÁüh_«p[r·,ÍD%25İ—¼)T»ãÛ9tŸ¯Õ¹“³''ı6L0ş/¥óĞÕ€mõaì*«Ø‡ŒQ€ŠšøÀäm\¿ÀmßÎê·u{Kì]—¹ÍG"Ïä¹iwOíí¿”%00"ÜØ­½é-ª¸§3ä^lùgiÃÖÑ+é]i·8}æq!)à²«ïBbD“ÓeÅˆ&xbë@·©§¾¡íhÕ¥=ıt/%00¸ÛVoG|õp«Ü±«ˆ;»Šoñp7FªÇÚà/%00Q ´­û{o‰½KàúZÑ¢¿zŠ=æsE’à‰‰„«‘ğ¸!®ˆÍ?Êó¦IôÊwÉ»ÒnqÜuõ]''/ñWiÒe%00ĞÑK]1_„Çˆ2¥¡SR¥…Ÿ*¤™»Á#}#ÔVG+[:NÑíğy¹^©ˆ±“ìsFª¬[<Ü‘ó{úMä €ìE±w	·ıÒÌóO°Ç²°ìE™ï;$°‘?ğwÅä‹ú¦É¬lÙåÿxWÚ-»®¾«¸/ù•IQ?2tVıîwìÏ¦ Ş¸©ãW^ê8KÓpw8p¤oÄ´ñ+ Éx|Œw«\¯TÄØIö9#UÖ-îÆÌùÌØˆ½+¸£šaœ†ÍãŠÉ%25[K¼7œ÷®´Û]}÷ Œ^4)êGí=ûÎ=FVa]ÖÖãµ¯:ç¿ƒxãoD·Õ8F†{Vîè+bì$ûgÓn—p7FÎ¿êô‡çn{jæ¶''„ë]™¢@Ï˜éD!/Ò»İÍøsx9ñÏ@±öUûQâL¿­çÆBø1a‚	?|¹· dïÂwo¹]L»Å£&}»À…;éï¬-70ŠaxşÁSc—+"çŠ¥İVCÍåjú3ÍØç
+âË=.T|yq­}º‘÷ø„ˆ<!O2`ëmëÖÖ¶U_Şo£­7ĞË[ÒÔñÏfÅ=VÙ²÷Ø÷.ı$ë’à‰gšw”ÔoeÍ{|¼ø^!Obèjé8sºy»¡³ÊáÆÇ§Ãã
+÷Ÿ{BµœMŒ¥ÿ8ã=Wøö±)$%25"()''á¹Ğ@ù?N?:e²ü§1¡™åïŸ£ş>¢Ù#Íš:~y´(%00.›/œjúó¥sÎeaÙ“¢~:9˜?~¦îÚ³º¿ÖŠìõQMx*T0şcÍbA@XVÜã	’Ù‚%00±±»VÓø^£±Øƒœ,ş‚É±?OŠ,	”Ğ}—:ÎnŞ~Å\ÁfğÄv''"çyâö&}»ÆÕ{\k«Şu A½(9z‘$8Éßµ§é»+_|ßúe_ÿÕIQ?êëï¨oû·ëŞçoÄ³³Î²WïÏø9Ğ4¾_ŞøÃ½“cv¯b]áëC•/°‰!ÒŸå|%00ÿ®ùmõålzºì¡¼¤_RíšçŸô¼\—+Â¯KöÌÕàZ(Œ_˜ö–H ÿ´¼PÈ“L‹[-Ê%00ğ3tVjŞFµ—¹nÚHáÎ5Üm¨äA\Pà–óÆ¡º©á£iÒw·ıfUw‘†NÉWş^Èº¾3õÔK‚''fOx""(ñ`å/ì³…	â¦_ápoH té”¿ñ%25–~skg¥ @,›&›Æ%00]Ù²û…zKš±K%00"¦;¤y‘d—na°‡ˆN^”ù>?@Ô×ßaè¬	ŒVDŞ1óßßıî»+ŸÛßËã
+âú:¤÷tLˆ˜%00óSß˜1ÃÜ«oëÒVÙ}=œ™6~e¬8§Çj2v×Š¥ãÅ÷Ä†ç®úeá+6O¸0á¾äßF‰Ò ³ïR[×w!ü˜q¢Ôy©¯1•4›ÓF[Ç‹ï€ÉòŸN¿œçÔÖõİ%00mI^˜ö{™®ç$ñÇ-Êü \×ÑKºªƒx‘ñ’YqâéÅÚW«.íñØvg&Dä%00Õ^êú-®´U¯;Ãñ_ú‡xIî7v×2Ì€8(ñÅÚ{ƒÊ€Íò·²û{¬½7,Îß}{9%00ÈÂ³ ­ë{K%00|wù_Î÷^î8%00Ñ¢LûDyX69…eÛGíhQ:%004›JFS®‹AÃïJöØÕ.†Ë@gxP<%00dOx2iÜü~[O{OCoœ,<[6íëšßØg¾±iÃ†;Õpëûëq@&¸ Fé|M“¾3¸³şôÎ…	UüÓT{ùî3?ïìk€tÙƒ3''ş:!rN/ºËrùÆ¢îUüg_Bµ—~ay%00](›µ°ªeÿMÜè%25imÇl– ş¸Èà”V»5ùêvõ]¹b¾%00ş~¼ù©oğDåh?`%00¤IgNüõìI/_1Wµ÷Ô;kx]¡N
+wõË
+Ïıºæ·Õ—nŞÇ„N)şş+ô»ˆ¸Lù£3’^˜3é7úöÓ½ıí$O¯µÏ-oü êÒR#%00œ|å¦IÑ''ËZÛ:Ú»›ÈÁ=ŠµÚ+‡OÖı¡ÛÒ
+%00óR^MŠš—÷¤9IYRßáGÿëüsM¦“¬3¤½1kâ™ºëÈÏ#lw&2D	%00Æ®Z×¿q®´U¯;pjìÏâ%25y½Ô¾³“Rø\ÑSş,	xÅ\Ùe¹|^÷I·Åàº÷†Ç©í;÷%00¬}%00Njß ìæç¸ÔqÁ:ĞÄ—„ğeæ>=I”…©†²ì=L‚»ÎT:˜èQ¹®ëñªd]íz(è±^%25Iãæ—7şùtóv2©0-nUnÂê¼¤_7›JØçMnbš““]WÃ­ï¯ç%00\P8ŸqÛğQ5é;‚»nˆÎTzàüÓC!¾»r„Şüx±á¹%00p^÷1ûsŸş¦3´^”6@÷5™¾€xÉLûtò{0O¾_$]ê8WÖğ.iú%00p±ewõ¥Ïüı²âVy -]ÎS;]ì‰k_«ĞÿÓîÆ©ör78Eº„ÍÓÛßş÷²Åeï²5ÀÔ¶@¸p›uQyã‡«~Eb%00h[{œ%00ÇåG‰Ò/¶ìbã%004›¾½@}ÊáøeÈòØvg‚ùã%00`¨w	WÚª×˜³%00Î6ÿ…í-æsºÀjë>xñ…–Á7÷¸ì=¯Ãè¯€˜Ğk¿ eáY]}WŒ]µÁQ¢@Iò"DY¯µİĞU3šòF4¼"ÙcW»
+yIı5ï±K§›¶]î¸Àã
+•1‹=6Óu5Üúş2 » `tíÜeÃè&}«q×DN7mg%00X:É?''À…»i%00â{k§''ÒH/™Å¦p8ş±áj°[—IÌ€†6ÇõÔï[9Üë”Ë[Ì½”CJ£ñ8%00Œç^Ÿì8°''ÛßxÃ=¯o¿î1Ö.%00ğóf…Ñ•œIãæ@ËUÇwâ‘¥ß(QšCºë¶;ÃõãÀ€+K×C¸ÜV½é@Q %00:zõöÙÈø)æú©cw½çEtí¥%00:™œ†''óÇé¯&$Ï"édí4µF]Ğğ‚d]íA(h5W:¤?$Èx†j¸öMU@v1@¦»nøÜ¤o5¸6ík¼†fl6%00kÔà%25šq¸:lú°¢êZMŒZ ğ¬?G 3•µukíƒˆ»Šy&­®õ˜ubo¸@!àJº,­%00 ›êÏt÷›å¤O
+*l6›±³ÁÁÒ6s­ÍfóçğƒbØ	@×Í'')Ö¾›¶™‘\İŞ¥³Ùl¡ãÒƒùÑ©ÒbÃUaÂ8>7„Ãñ©t×õt%25§$Hi³Ù²âH“şÄ^ŸÀ€P›ÍÆç†±™]·}$ú,ş~<š¦]‘àV[¯:°£G*ˆDÚgâEÙl6ë@gŞÆÀ¾ª#è@“¡Ä–`‹É ÙbDÓl6[cÛ7½ıWÓ¤?‰M½Hí€qÁé6›­±íÛkõèf¹î¦c©7${ìêÑ‡%000v6Úl¶ĞÀ8WMpròE$Ï²;Êİ(a/ÖuÃ=nÒwwİfÕÑPüık¡‚Ø(QÚ=Šµ €º¯åê™óÔ§MÆ“7¿ÙKÒúm½Í¦’xÉÌxÉÌ
+ı.Ú»ZßvŒıe,‡á«c>…<1ûµÿ!!3¨|®È>1Uº$/é%25?Í\íilïiàqƒ#‚’~%00}„<1%00ŒT™Ãğ½ı¦`~4ŸêE™ï:ğtÓ9É/Oûy³é[2Òò"¦Œÿ)%004OØçü!½ç€©§¾Çj)xşAV[·<\%00Í¦ë@7ÍÈ†vù‘‰îf“„oM<vµWBeÀ%007İ1ŠHŞÈ0B€M;wİğ»­I;€7°˜wşybä}q’éÑ¢ŒpaÜxñ=ãÅ÷”Ôÿñt“Ûo¤öXš¶µ(^23^2‹Dâ"î»u%00`8àçç8oÌ.r8¾©w?N€½%000^|ÏìIëÆöMİ›Ô.äáªÅ“ÚhfÀÃ=pîiİõO''¦îú`~t¸p¼wÅzİU—öñ%25êø§–ûy[×÷CK‚''úûñúú¯–ÔıÑ>çé=g¨vÍÄ¨Ñ¡Í¦yx¶±[K¶R¶\=#W‰e–Ë‘!Ê^İö“Ş.xìj/…fP”§ŒQDòn@†áŒ®»eø]Õ¤¸£šqí5"Ã_uHY£mıJÛú%00óÇÍN^?!bº:şé
+jùİà¦bH«7³ÑVyx6×OÀç†ˆƒ­¶îfãµMÔ}A¼HA€Ø¡¸%009°ôw:\rÙüèŒsNA€%00z¬F6=+n%25%00\ şq¦éo”>Êœ½VSH ”ÇñØ"×Ñ™ÊÆ‹ï‰«Ë>pñWÚêX8PÓğá¥«Ó_''ÿfµuëŒšÚÿëìkµå®÷ÔICg%25‡¥ÙT61jA´(£ÛbâsE•CJ4›Jäá*YX¶±»Öß×l*q±ÁÜ \wÓ½.ÙcW>%00@€%00ôö_uÑg''eDò$„¤¹s€‚ÑE	·÷¬Ißø¯İ!š¡iš¦éa¯^¢—Òo(Š|:ûZ\üMÓÀø…<VÌ]iÖŞ&c)0~ÒĞ¬ñá¹4M×··Ñl†+Õ4M‹…‰7Šø±4MØ¬¦îFó¾.''‡ñsVx$ºîêˆ $š¦¯tTÛ¥L¢iºÉXvSw¹^M®ç¼tµ’¦éáD-rıóİ¥C6[THfdÒãâœÓÇÂqá÷æ§lì·YŠ¿Ûüş±Yï›ñÙ¹5íİMÊ¸î½a>#|#\÷ss[	MÓQ¢ièTš¦›ß’ôÃ74MËÂ²¢BÒišnj+M¹î¦¦*oî±«=Î*…ÆÑ4mèüŞU''89Ùjx5„º Ür¾³X·÷°Iß?ß«àİÁ­Kî¦Û}l´…ä²ö›=WÌ}i­G &43<¸Ûúoç«ŠÈYÀ\Wbâ¸û%00 ÙTJÓıl"ÙŞ ²Ï™!pp 
+şn™`ŸSjŸÈ¿„ÈY%00Pg§-‡Ã%00ò†ß¡Ï8Q
+‘àÏ	ğ¤š\Î©½|%00”Òûù~!U_RäÜÇ¦µjz‘"bö%25tYZ+ô»`nÊïx~B[‹SúX8pnÊïbMİ{çuŸX:FRÒï¹nã`«»y\ê²´^íiŠ
+I‘‡gĞ}ú«§Iº±KÛc5çÈÂ¦1Œ2iFUî(‚ƒ%25{ìj·B)94Pê $qÜ%00h4w£²®·Â5<ó¹«!%00\Pî9ßIC·÷¬I»‚nåp''}[‚;—\L÷óã-ònrôı\ÁP"G­x%00:zum=un)6Jim'' &4S.Î¶ÑÖãIû«ÕW¾ììk		”ÎIŞàïHcÃs&€)¯ÿĞ>s{O%00¤É
+IN??Şìäõ$yDápa‚+¾µÿ°«³“ÿ;q\>›8kÒ¯ƒùQW{š¾o-b3_é¸%00iòB‡KRÒ¤Ks&"‚’<¨>×sÖ¶½l¾Ä‹\4õm±PÁ¦G%25.¶=2XyS™3''ı*0 L ­üï›zædí[†ÎjqPÂ²ì¿ÊÃUl:×_!ä>åï<0a,HöÖÍLş¯ÕsN¯szõœSçıñä?IÃ¦yæ½a?ÃêC_švSg2%00Í¦27dBÄt}ûi3À¦7KÂâ%253®tVZlİ£)×İ áüñŠd]íV( äMúešt)€ÃáNOzA<©Çj¬ºô/×+ËÁ
+Ô¸©LC¨[Ê=ç36%00ğzf8ãQ“v+İ².C³U|ÛC3MÓ%000¬QäÍ0W‡Mw6%25F4Eš5{Ò·÷4õõ›Ã„±B^„¥¿»èâ†»Ñ»Ò%00 Ëbhïn"¯Ø«o+î¸îOÔhËçç_x`Ê»ÉÑ÷+"ç»k¹¢0a%00s¬úµKì3ŸjøhnÊocB§®¸çKSOc¸0Ï•Ö¾;1z~˜0nêøå‡+}c:Àç‰HNCg]AÊï§''şÂÜ×"NàqCúú;¿¼ğKÚvm/XIıûK¦L‘…e/¿ç‹öîæP¡,ˆ''9^³yZüŠ ^äŒ¤wúùJ¶Æ]Ï	À|qîÅÅSß•%25?¤ú´£W×cmâEˆ2†±…
+ã®˜«nlû€­Ÿö§ ßf¹i­Ğ–½§Ÿ^şš<<ûÇ™o÷X½ú%00¾8HáÇáÚhëEj7©×ÛêX8pÿ™ÕSã~Í?àpüÃ„qò0µ,3ëóÿÙdüÆ]ï93ÒWµŞprbÔ<Õ„''â#ò8¿sÍ;k.>‚h2–¦I8†{9MÆ’IQÓ=(×­ 1,^’ì¡«İ
+¤hcWCŞÄ_eÇ?ÑÑ«''ÑÀ:ĞóeÅ¯‚ÌLsr²jŒ]@v+@¹åü¶®ºˆ Ä™“~M×0äİ!n5i·BĞ-nWÍ‡ƒq:6Ï°WÒDéŒ¥+Y’*}`|„:T8>\×mm«j9pªq»¹÷fyW%00%004N(e‹xşAuW¾v¶È`®ù¸ôÁì	ÅIrÇ…(­]õ†â³Mqnú5—>€É±‡ÅG%25¶š«Î6ÿ½±íD£ñäü´WO7íp>’‡)%00ÀF[ÿuö¹‰ÑóSe‹%25ÁI6ÚZÛúUIíÛ½:ûÌ-¦ÓÎ=—=á±ÈIãDÉW:*_\ßÒ~º­»naúkçuŸŞ¤ôÔ¸k9»-†OË™ûHbÔ}aÂ	Áü¨.Ë•
+j×yİ§W{šn"àëêWæ$¯÷óó?Zı{W¾J–~óş3O''Få§Ä,Š
+M‰¥Zmİ—;.êŒ¥U—8¾wÕ…¶êuøltÿñï^ï·]ëx8ÿ‚ÔMIQù9	O5µ±7½ç †Ã%00%00×¼f³Yã#gD''µ÷4öõwÜÀ«úÁçpt¦RûlÍm%25CéeÃ˜ïA¹.áğ–d]íz( œÔ¾ÌÊ/“''ÑŒ­ŞP¬©¯­Kë†iÃ9Ù]5Æ. » .:ÿhõÿÌMùmH`Ldprƒ¡ØÃ=hÒî† [Î_Œá‘1eÅôƒ^ø‡Å÷YmİcSçævÌğ÷ã¹ôšÈxæÀÕ÷€}g&lÆ2A2ã?2ß´ÑÖwŞã5‘[‰‘ªAÆ.ÍÜ¶ƒ¨»›˜ĞÉ‚€ˆÚËGúºÆ¬_¶Úfñaéw%009Ğfëçpüı8‘!À/˜¦é¾~3FŒ;•¡µ«ù¹³–fî&Ô	OÀé¦¿a"^ÄĞùı8‘Rı£–ö3ìêLh <;~%25%004·•b{»óÁ*F~XğÍª·aÂ	Ó“ÖÈÃ§UR{Õ¾V¹£(şnó¢©LŒÊO7ÛØUoèğÂÅA%008]–+%25µoûZAAî4¸ôõ×9w“¢Œß[©ÿìß5¯ã*â].]­øÛ7NÿYxV˜0–ç/ -­æïÛNmú»e×CÓ4%003@Û°S@~`8¯îOõµˆ{„
+xáíİ¾VA;‡¨Ğ4c§v€Æ½YÈw4e„ø„^k{¯µİ×Z rGqùêOÒ"ÈsGıé‚ ‚ ·~¾V%00AA».®Ì ‚ â+piAAŸÁep$‚ ‚ ˆÀ="‚ ‚ø\šAAÄgàÒ‚ ‚ >—fAñ\Æ†3"‚ ‚ø.CAñøB3AA|îAAÄgpi\›AAÄGpßEAÄGpiœAAÄGàAA|pBAAÿ5ƒ ‚ ˆÏÀÿšAAÄgàŒ‚ ‚ >7«"‚ â3¸4şé‚ ‚ >gDAñ¸YAAŸïAAÄgpq‚ ‚ ˆ¯||W*Q.ş2%00Ö¼U×R%00
+©zêy%00Øò•–¶j6±C÷£/‘›ŸY¼S!U“ã^‹YS³û³o6@AÖr/ËaÍ[E§¶@ O´ráûë‹_ØA$°²Ö$ÊsßÙÿğ3‹wR†ÊÊ†#Ï,Şé î/ŞI WIAD‚ı)%00üøŞõòÈT{=2ûõˆĞXÊPyÉX“¼”-XÄ¦³(CeQùÖ>«Ù^ ërW-UB,"§ÄKÏ,ŞÙk1ï8ø$«[yÍòšİÿ÷L½³!D,›RK•¿ğQŸÕL¬f•$%00"Š•%00Û¿|’(It`3°
+³•h_ºf+îøùíÄ4{
+²Öäe®ğE-mÕ‡Êßªl8B”)È^£J.$éûO¾BnÌN.$dUÊËX‘–P%00%00ïìAÜG*Q.ºwÃ©ïö”×ìq>ÍËX1#c…X$7™©v€	%00?¾w=‰Q&3¥©Ù}äÔVçüÎş‡²×&Êr¤êùv1³¢¾èÓ¿ØgítP‰=5™©;%00`Ñ½LfŠt:¼‡æl%00ö^{ÍŸ^ô	%00T6Šğ!+¼%00¬]%00@òì8ø$[t /dÑ½TÊB¢UÑ©-¤_¶s‘J”ÍŞ,‹L±Ïüã{×Ë$)ïx„õ’óiQùû¾ ?kÍÌÌ•¾Ho¨*:µåbÃ¢›¾­Šô¹ÙÉK³&-ema•g3ØŸ·¤''%00€½@`—fDdH‘5ii¾Œ”À%00É“5q©BªVHÕEå[Û;)%00 é‡5[%00 Q–33s%250ğÙ7›%008%00 ©ŞİŞ©''ÅÔêËHæ>‹9<X–\xüü©$…<prSŸÕœ\ØŞ©R50pâüGDò<ÕZ“™¬¡¡«ìŠ’Ã)%00È%25©öz†‡ÈIåŸÜTµ¦ {mEı‘öNjñ½/+¤êı''6¦Åç+¤j¢°T¢œ™¹R"ÿèàS%00ÈÍÌ\iïâ+…T]«/«o)#§ÄKÄcYk‹Ê·İj©R¢Û5Ì ÄF©D9Oõ<%00§¨|,;~~%00İ%00€•:”’Ÿªf«Éğ“9¯«”…;¿~±N_¦æ8WÉ\§/«Õ—@^æ
+…T½é¯yìÀ%00–/x/=¡ ¢¾¨¥­:;yéÊï¿½ïáú–²•ŞWÈ•¼ô™Å;Izx°ÌA%25 ØF‚ â.‚%00Q¢,§V?úìOó³×ÌW=_«/ÕÔìN”å,š¾Ï9R¾5?{ÍÌÌ•NnÔª
+Tkç«¿Ú©?¤y%00TÉ…b‘œ›Ì)‚œLf*Aª%00MõnS''%25‘«”…âùşùÎ*ÕêK<ÑÌÉ+Ó
+Ö8Ùd¦TÊÂÊ†#ÌÈX‘PpàäÆ>K§³!dô#‘“Ÿ_@RX3ÓâóIJz|é5y!¿xğ±H^|n;%00¨”…‰²œMA†)d¼ÅjòÌ¢&3õÎ¾‡Å"ùC÷m–IRşçoy2IJ¢,‡Èö§¼ÒÍ™ÌéæÀ®Ğ·U©’W,xÿ}×µ”ŞÈN^úĞœÍšêİÄ6ƒÃéŠïË$);¾|%00Mß°bÁû›ş:ƒôM\Ún³j¯ÅœP°óë =¡ ×bğE%00@ò¨”…Zª$I;#cùş“€fhûŠÜğ³3''¯<¤ÙÂ%00%00å5{HWç@­¾D¥\ÆQHU$E!UëUb‘\S³›”E3´Ñ¬#’ç©Ö²Çš¡íÕv>%25š§ÅÏ->¿#-~.1dÛùõ‹Ï>°sÑôõë(dêCš·(Cejü\Vá@èŸ(`­ÎN^%00Ze0ï„%00%00½IDATªD¥,Üwb£}oığ}›7ú#»ru˜§Z[QXßV%000$İÁgï½¹º!Aª"™{-f±H‘¬o«N‹Ï''æ°¢²“—’oQ^æJMõµöÇ%00ó“9¯©”…;¿z‘´Ëa+‚4­¾„Œ`æ«—J”l™DIÚßö/Ÿ€cç¶¯\øB¦îµt(djMõ®_¿%00ššİ~v"/sE­¾”Ôk1§ÅçkªwË$J±HNÔ¦q74‚ AbÃ†>ûÓ¼ÌF³îí}ÀaØ²şgÇó2WÖşÓR¥ú¶*ãWTVò£™*«Ş%00
+©Z,’“¸GäÀĞék%252×ÅLµrYj|~E}‘½JZª¤¨|+%00(dj±HN3ÌşÓò<}½ÑLÍW=¯¥JÛ>’!=–±H¡Ô·U¥L˜ÛcéòCÙ«Ó&-1šu%000=c9Ñ<;¹P,’ï?±±øüv%00¸Øp¤ {T’B”4šuöV$Êr|‘Ñ¬ÓêKAa!Rša˜Á¾•±·t¨O)„¡nnÿ‰½V³L’’Pp¡îğƒOÀñs;V,|/^ªÒ·0LÖ¤¥İ·¹¬z×§_¿4LÅÙbš(Ë1šuZª´×jî±˜¤*†T`pF„èTQW¤J)L›%00¾HSµ[•RÈ00 R
+ø¢ãçv%00@zBÁş@YÕ®9ëd%25C3%00°xÆË=}WÉ¥wö=Âf¯ÓkTÊe2‰R!ËÑR%25¢X…LMF<uG®ı€vè¿ìç<"SŸYüÉHW€2TFˆb³•ËŠÏíÈV.3™)R¯À@-UZQ_”P(Ë1™©â³ÛÉ`U8BÛk1*ÛBdæe®Ô·UÖlI’çf$hªw_,}sAÎº¼Œåd"‹x	%00ŠÏmW)Mß@LfèÁt{OÕìeäk#“¤‚İœ©ˆìäBcÙ[é	ƒA3À@xˆ<=¡ øÜö¾9ëÂƒåíQ‰Ì¡™Ì+|ØŠ ™ÅÁrRtzÂ¼^‹™j­d}˜:!%004U»ÙI,bKAö%00ĞTïœãé ´TIzBë@¢v`@iÖägDñ`h%00%00H7%00‰Ò!?´øÜv6¼hªw/P¯K”æœªÙ›$Ï}á¡/Œf]-Uzªf¯ãïáë#–õ†ª''7]ËÃ%00%00œªŞ«V.‹‰H®¨+rVIÀÉ#Sw~õ"0Ğk1i¶.±á™>€''6]WĞõıZE]‘:eYÖ¤%25¦*C1¯¬j—:e¹*‘g(æ;»­×j^ ^''–›:)òS™Äd™$(Òl5™)"M™bß¹TÔQ†ÊÅ¼7W7h©’Ê†¯NœûˆU€ÍInHúŒÌå”¡²H³5I›P ©ŞMJ<U³—dèêØ{“ä¹%00PT¶uÄïÔƒ3ÿÄyÊPYK•8ÿ‘©sp^êº÷ˆTÔ‘I2Â -!ßd¦.69U³W,’§ÅçPø5ô­•µT)ùØ§_¨;%00
+©:Q–C®&ÊsRu¯ÅÜÒVuS±.RVµK&Q*dj™DYVµËşÒ''G^ ?Ö÷Å~ñ(\Q_$à‹æ«×€T’"ÉŸÛ^§/3™©¼É+ÙÌu-eõErÖ‘1KO_Ç¡²-IòÜ¼Ì•öé½3ëÁQ%00%00¬^òéê%25Ÿ>·Ád¦Ø	.£YGúøÅ<%00°Ÿv#lÅçv”×ì€™“W°—|‘–*‹ädÄà`—CE¨R
+IÑ2‰òPÙ{?*l7÷ã"DÏÅ¼ô„-Ubo&‚ È€¦z÷Û{.«Ú%25à‹Ô)Ë]²“ÄÌ‘ ‹,µúÒKÆ×K1™©Z}iE}Q¥cÑŒõ$±øÜv-U"ä‡;»MÃ¾ÌÔIi©’tEAº¢%00H?I9qş£SÕ{`Færö‰É‹f¬vÉÎg—ìÌR.L·˜Y+Lfª×j~gï#ûOl¤•IòÜÅ36<³äúßí×#“¤DˆbOœÿ¨V_j4ë®+Ñ2|/ ä‡j©%00xhîë7ìÀ§_¿´ó«/Ô–G¦Îš²ê.‘“K\š%00`%00ôX:/Ô©S
+fêB]Q¥“\
+‘‘º|ó¹r[ZBÁ…ºÁm&D%00¤+æ%00e¨"?µËª÷8A=}”¡jÖ”U¾¨V¯1uêU)…¼-UÊŠ²ë|J*ÿ´gpt¶emƒsf%00ĞÔìY³îá¹oãDy›­§¯“ÔkUX*Q¦''Ğ4äe®%00€‡çn~xîf’'',DF|Å0œ¼ğ›å''É…a8¬ÇÎnOK˜KÒÙBfİ¡²­ÎŞX»%25%00å9Ï-İ™—¹‚Í£©ŞóhşªµF3¥Õ•±¢ò&¯%00€——Ÿ )i	{‹7•İ¶ÿø¦ùbAÎºZ½†u¾CEÌKß$e­^úÉy½6‹Hö@)¤j¶ÜWŸ:O*É|›.‘G¦R†*Öp­®Ìh¦
+TkÅ"ùÁ²·Ä!²a«AÄHô(«Ú}¸l+%00$Êr+ÜÉ0 »RENÑƒ“L™è®Tåg¯i7·|rä%258òÉ?#sùùÚ"™,‡J¯Ëd=¦³‘‰}k{9ĞR¥D%25†…9ëbrÈ¼‹–*M’çVÔ}5lÿÅ0×4U{-Ø\ Zc4ë¾×•²WÉ8`ÃP„OWì;¾Io¨J’ç’Rş´çqˆü7+O°ÒLfÊŞŠDYB®*¯Ú{ôÌvOôHÁëŠy	1ƒÛrÙ®sõÒO’ä¹l‰×usAr}k%00ÄKUD7%00øß§ÎéUävÒ?·~Ö”UùÙk×µ9x ,H²¤Òlûü)%00˜§^³0gİ´ä%25ä^îuîgMÕnuJa„HşIÕnö’jR!%00|\ô¢É¬€ùêµê”Â}ÅÉÜË|ÕZ%00H”«å‘)GÏlëíë†%00*åÒÄ¡gjjõ¥µúk{qµºùÔU%00PK•’î*B$?Tj·V7òºŒ‹§¦½VW’›«Õ•˜:ô7»…%002‰FÀ•G¦Í”€''ÊPhu%25‡Ê¶%00€XûhÁæ¼Œë·ôöu,}kÉÌ—¯9pHÔ¾â/=ú%25{Jn''"Òl±×e9%00[É]µGzóÌ"ùÁ’·XÉ‰2u„H~ôÌ6¢CZBşì©«Ò
+z-%00Ğ××	%00Ÿ½ğÒ£_>’¿yóÇ?¶"†êzP±Z]Y’<7Q¦îµ˜ÈÛ ©Ş«©ŞMªä¬ëµtêU3''¯ğEšª½êÍÔ¬)«Læ“YGÒ‹Ïî°—¦©Ü½ ÷ù^‹¹¢öˆıl‚ ˆ·èµšÉ<ÿ<õš:J£«’ä¹eU»z­fuÊàó2ìŠ»/uXæ©¯Í—WÎL¨R–(äª‘\²Œ2TÚ/"Dr2ôÉPÜ´ˆa©¨+ê±¬Å~Yú&›˜(Ë‰Å;»­¢î+%00HWÌ5eUzBAñÙfMYµêş÷>)z©×b~`æz{Qb‘ÜŞŠvsËÂœu"ù¾âk“¤¡€''JWh©2”‹äl9eù¾ã›(CåÂœu}–.½¡jæ”åB~¨fÈ?d¦äPéÖtEÁÂœuë¾Ò·U­^ú‰ŞPµïø&²—tæä•zC•*…l²,€…9ë(Cå¶=Å®È´›[È—·n¦ÑêJf
+%00´º’¤X2†bT©…F3UVùOÖì¤Ø\•r)y:fAîóD³ƒ%25o´ó©:¥=>Xò–VWÂ^¬/š=u•VWÊĞ´±Cg4S"¹V÷-smÅa®P¹w
+%00Mkª÷$Åæjª÷04Í&:ä±¯’Á!€VWº·ø•tE¾€/ÒTïÒ¼d~ÎÚœÔe%25ÃĞô±3ÛÒ
+’bsÈ)¹¡iªµò`É[Ä3$=B$''§ƒ)}ÓA£™†²§=}W/ÔV§.+«ÚÅ&ª”K øìvÒªŒºÙSW©”K‹Ïms.ú‘üÍzC•sEÔêKØÌ%00@ÚD /€IŠÍ­¥ÊšşøğKf¾Ì:äè™m¤ö?üì‰Gç½ñhÁfVÛ*ˆÀ²ª]rŸ¿P{˜İ•Âà”‚ Á0ƒ$ŒØŸî=öŠ€''Z˜³ä¼P{xï±Wšşğ³''»ÿƒç
+_ı Õ•t€Á^îZDb%00%00X	%00P«ü6¸c ´òŸûŠ7Ú1¢ƒ:eÉcìĞıù³ÇÍìe’Ç!î9C"|NêƒšÊİlb¶ò%008v†ğÍ³¦¬R)—|X{èÏŸ=şhÁİÿ>%00P­•Z]	+-BkoÅš7ã¤’I³§>F4ìéëøøğÆæaÍOOÈòC5•{´ºoIò|õ•²pï±W†zÁg•ùğZ´g€¡é¾«~aÍ²¬ú÷^ÿxa’<—¤ï=öÊc÷ÀŞ¨Õ•ŸÙŞk1|ø…fnøÍÊÎ9«ÿ0Ş©ö%00@™"ä‡Í”éúİ$2T´‚ˆ ò É#Dr£™røÅ/‹LòEÎé·;Iòš`¸1¾H™âbæà±''Gº‘˜@ªì»ÎêÿÃ‚ ‚ ¾‹oy@AÄWü?Î™ƒÍaş¥%00%00%00%00IEND®B`‚')[0m
+Redirected to http://localhost:3000/images/2
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/images]
+
+
+Processing ImagesController#show (for 127.0.0.1 at 2010-01-27 23:44:52) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mImage Load (0.3ms)[0m   [0mSELECT * FROM "images" WHERE ("images"."id" = 2) [0m
+Rendering images/show
+
+ActionView::TemplateError (No route matches {:id=>2, :action=>"image"}) on line #2 of app/views/images/show.html.erb:
+1: <h3><%= @image.comment %></h3> 
+2: <img src="<%= url_for(:action => 'image', :id => @image.id) %>"/>
+
+    app/views/images/show.html.erb:2
+
+Rendered rescues/_trace (40.7ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 23:47:03) [GET]
+Rendering images/new
+Completed in 64ms (View: 60, DB: 0) | 200 OK [http://localhost/images/new]
+
+
+Processing ImagesController#show (for 127.0.0.1 at 2010-01-27 23:47:09) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mImage Load (0.3ms)[0m   [0;1mSELECT * FROM "images" WHERE ("images"."id" = 2) [0m
+Rendering images/show
+
+ActionView::TemplateError (No route matches {:id=>2, :action=>"image"}) on line #2 of app/views/images/show.html.erb:
+1: <h3><%= @image.comment %></h3> 
+2: <img src="<%= url_for(:action => 'image', :id => @image.id) %>"/>
+
+    app/views/images/show.html.erb:2
+
+Rendered rescues/_trace (38.6ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-27 23:47:13) [GET]
+
+ActionController::RoutingError (No route matches "/image/2" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ImagesController#show (for 127.0.0.1 at 2010-01-27 23:47:18) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mImage Load (0.3ms)[0m   [0mSELECT * FROM "images" WHERE ("images"."id" = 2) [0m
+Rendering images/show
+
+ActionView::TemplateError (No route matches {:id=>2, :action=>"image"}) on line #2 of app/views/images/show.html.erb:
+1: <h3><%= @image.comment %></h3> 
+2: <img src="<%= url_for(:action => 'image', :id => @image.id) %>"/>
+
+    app/views/images/show.html.erb:2
+
+Rendered rescues/_trace (102.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ImagesController#show (for 127.0.0.1 at 2010-01-27 23:47:34) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mImage Load (0.3ms)[0m   [0;1mSELECT * FROM "images" WHERE ("images"."id" = 2) [0m
+Rendering images/show
+
+ActionView::TemplateError (No route matches {:id=>2, :action=>"images"}) on line #2 of app/views/images/show.html.erb:
+1: <h3><%= @image.comment %></h3> 
+2: <img src="<%= url_for(:action => 'images', :id => @image.id) %>"/>
+
+    app/views/images/show.html.erb:2
+
+Rendered rescues/_trace (37.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ImagesController#show (for 127.0.0.1 at 2010-01-27 23:47:58) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mImage Load (0.3ms)[0m   [0mSELECT * FROM "images" WHERE ("images"."id" = 2) [0m
+Rendering images/show
+
+ActionView::TemplateError (No route matches {:id=>2, :action=>"image"}) on line #2 of app/views/images/show.html.erb:
+1: <h3><%= @image.comment %></h3> 
+2: <img src="<%= url_for(:action => 'image', :id => @image.id) %>"/>
+
+    app/views/images/show.html.erb:2
+
+Rendered rescues/_trace (97.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ImagesController#show (for 127.0.0.1 at 2010-01-27 23:47:59) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mImage Load (0.3ms)[0m   [0;1mSELECT * FROM "images" WHERE ("images"."id" = 2) [0m
+Rendering images/show
+
+ActionView::TemplateError (No route matches {:id=>2, :action=>"image"}) on line #2 of app/views/images/show.html.erb:
+1: <h3><%= @image.comment %></h3> 
+2: <img src="<%= url_for(:action => 'image', :id => @image.id) %>"/>
+
+    app/views/images/show.html.erb:2
+
+Rendered rescues/_trace (38.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ImagesController#show (for 127.0.0.1 at 2010-01-27 23:47:59) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mImage Load (1.2ms)[0m   [0mSELECT * FROM "images" WHERE ("images"."id" = 2) [0m
+Rendering images/show
+
+ActionView::TemplateError (No route matches {:id=>2, :action=>"image"}) on line #2 of app/views/images/show.html.erb:
+1: <h3><%= @image.comment %></h3> 
+2: <img src="<%= url_for(:action => 'image', :id => @image.id) %>"/>
+
+    app/views/images/show.html.erb:2
+
+Rendered rescues/_trace (99.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ImagesController#show (for 127.0.0.1 at 2010-01-27 23:47:59) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mImage Load (0.3ms)[0m   [0;1mSELECT * FROM "images" WHERE ("images"."id" = 2) [0m
+Rendering images/show
+
+ActionView::TemplateError (No route matches {:id=>2, :action=>"image"}) on line #2 of app/views/images/show.html.erb:
+1: <h3><%= @image.comment %></h3> 
+2: <img src="<%= url_for(:action => 'image', :id => @image.id) %>"/>
+
+    app/views/images/show.html.erb:2
+
+Rendered rescues/_trace (49.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ImagesController#show (for 127.0.0.1 at 2010-01-27 23:49:33) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mImage Load (0.3ms)[0m   [0;1mSELECT * FROM "images" WHERE ("images"."id" = 2) [0m
+Rendering images/show
+Completed in 63ms (View: 58, DB: 0) | 200 OK [http://localhost/images/2]
+
+
+Processing ImagesController#image (for 127.0.0.1 at 2010-01-27 23:49:33) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mImage Load (0.4ms)[0m   [0mSELECT * FROM "images" WHERE ("images"."id" = 2) [0m
+Sending data banner.png
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/images/image/2]
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2010-01-27 23:49:38) [GET]
+Rendering images/new
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/images/new]
